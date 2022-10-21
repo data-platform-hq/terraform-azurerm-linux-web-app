@@ -40,12 +40,6 @@ variable "application_type" {
   default     = "java"
 }
 
-variable "java_version" {
-  type        = string
-  description = "Java version"
-  default     = "8"
-}
-
 variable "ip_restriction" {
   description = "Firewall settings for the function app"
   type = list(object({
