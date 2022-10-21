@@ -96,9 +96,9 @@ variable "use_private_net" {
 variable "application_stack" {
   type = map(string)
   default = {
-    java_server = "JAVA"
+    java_server         = "JAVA"
     java_server_version = 11
-    java_version = "java11"
+    java_version        = "java11"
   }
   description = "Application stack configuration, run `az webapp list-runtimes --os-type linux` to get the list of supported stacks"
 }
