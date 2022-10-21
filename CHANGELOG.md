@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.0.2...v1.0.3) (2022-10-21)
+
+
+### Bug Fixes
+
+* fix vnet integration ([5f53789](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/5f5378965daabb28dccd542fd375ba67be25a617))
+
 ## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.0.1...v1.0.2) (2022-10-21)
 
 
