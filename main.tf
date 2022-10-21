@@ -66,6 +66,14 @@ resource "azurerm_linux_web_app" "this" {
       ruby_version        = local.application_stack["ruby_version"]
     }
   }
+  lifecycle {
+    ignore_changes = [
+      tags["hidden-link: /app-insights-conn-string"],
+      tags["hidden-link: /app-insights-instrumentation-key"],
+      tags["hidden-link: /app-insights-resource-id"],
+      virtual_network_subnet_id
+    ]
+  }
 }
 
 resource "azurerm_app_service_virtual_network_swift_connection" "this" {
