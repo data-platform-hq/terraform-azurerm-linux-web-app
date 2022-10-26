@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.0.3...v1.1.0) (2022-10-26)
+
+
+### Bug Fixes
+
+* fix output ([bb8db81](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/bb8db8132771758abd957f842a561a383d92c385))
+
+
+### Features
+
+* add UserAssigned identity ([f3d2fc2](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/f3d2fc242668696534bf4900a00db3e7036dc714))
+
 ## [1.0.3](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.0.2...v1.0.3) (2022-10-21)
 
 
