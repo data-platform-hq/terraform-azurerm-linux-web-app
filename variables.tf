@@ -96,3 +96,33 @@ variable "application_stack" {
   }
   description = "Application stack configuration, run `az webapp list-runtimes --os-type linux` to get the list of supported stacks"
 }
+
+variable "identity_ids" {
+  type        = list(string)
+  description = "List of user assigned identity IDs"
+  default     = null
+}
+
+variable "logs" {
+  type = object({
+    detailed_error_messages = bool
+    failed_request_tracing  = bool
+    http_logs = object({
+      file_system = object({
+        retention_in_days = number
+        retention_in_mb   = number
+      })
+    })
+  })
+  default = {
+    detailed_error_messages = false
+    failed_request_tracing  = false
+    http_logs = {
+      file_system = {
+        retention_in_days = 7
+        retention_in_mb   = 35
+      }
+    }
+  }
+  description = "Logs configuration"
+}
