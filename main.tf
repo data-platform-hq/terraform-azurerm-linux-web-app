@@ -43,7 +43,8 @@ resource "azurerm_linux_web_app" "this" {
   app_settings        = merge(local.app_settings, var.app_settings)
 
   identity {
-    type = "SystemAssigned"
+    type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
+    identity_ids = var.identity_ids
   }
   site_config {
     always_on          = true
@@ -64,6 +65,16 @@ resource "azurerm_linux_web_app" "this" {
       python_version      = local.application_stack["python_version"]
       node_version        = local.application_stack["node_version"]
       ruby_version        = local.application_stack["ruby_version"]
+    }
+  }
+  logs {
+    detailed_error_messages = var.logs.detailed_error_messages
+    failed_request_tracing  = var.logs.failed_request_tracing
+    http_logs {
+      file_system {
+        retention_in_days = var.logs.http_logs.file_system.retention_in_days
+        retention_in_mb   = var.logs.http_logs.file_system.retention_in_mb
+      }
     }
   }
   lifecycle {
