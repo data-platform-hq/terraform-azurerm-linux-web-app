@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.1.0...v1.2.0) (2022-10-27)
+
+
+### Features
+
+* add BYOS support ([250cd5c](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/250cd5cd81cb4688ca83a6b70c7a6bb94365afd5))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.0.3...v1.1.0) (2022-10-26)
 
 
