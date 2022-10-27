@@ -33,7 +33,6 @@ locals {
 }
 
 resource "azurerm_linux_web_app" "this" {
-  depends_on          = [azurerm_application_insights.this]
   name                = "web-${var.project}-${var.env}-${var.location}-${var.name}"
   location            = var.location
   resource_group_name = var.resource_group
