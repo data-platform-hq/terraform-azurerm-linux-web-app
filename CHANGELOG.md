@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.2.0...v1.2.1) (2022-10-27)
+
+
+### Bug Fixes
+
+* depends on ([65a9d59](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/65a9d5989719475fbaaac1711434aad27002f805))
+
 # [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.1.0...v1.2.0) (2022-10-27)
 
 
