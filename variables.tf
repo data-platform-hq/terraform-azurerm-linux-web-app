@@ -136,7 +136,7 @@ variable "storage_account" {
     type         = string
     mount_path   = string
   }))
-  default = []
+  default     = []
   description = "BYOS storage mount configuration"
 }
 
