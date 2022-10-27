@@ -126,3 +126,27 @@ variable "logs" {
   }
   description = "Logs configuration"
 }
+
+variable "storage_account" {
+  type = list(object({
+    access_key   = string
+    account_name = string
+    name         = string
+    share_name   = string
+    type         = string
+    mount_path   = string
+  }))
+  default = []
+}
+
+variable "websockets_enabled" {
+  type        = bool
+  description = "Enable websockets"
+  default     = false
+}
+
+variable "enable_appinsights" {
+  type        = bool
+  description = "Enable application insights"
+  default     = true
+}

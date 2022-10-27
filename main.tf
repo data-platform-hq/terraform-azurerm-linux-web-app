@@ -1,5 +1,6 @@
 resource "azurerm_application_insights" "this" {
-  name                = "fn-${var.project}-${var.env}-${var.location}-${var.name}"
+  count               = var.enable_appinsights ? 1 : 0
+  name                = "web-${var.project}-${var.env}-${var.location}-${var.name}"
   location            = var.location
   resource_group_name = var.resource_group
   application_type    = var.application_type
@@ -14,7 +15,7 @@ locals {
     LOG4J_FORMAT_MSG_NO_LOOKUPS         = "true"
     WEBSITE_USE_PLACEHOLDER             = "0"
     AZURE_LOG_LEVEL                     = "info"
-    APPINSIGHTS_INSTRUMENTATIONKEY      = azurerm_application_insights.this.instrumentation_key
+    APPINSIGHTS_INSTRUMENTATIONKEY      = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : ""
   }
   application_stack_struct = {
     docker_image        = null
@@ -50,7 +51,7 @@ resource "azurerm_linux_web_app" "this" {
     always_on          = true
     ftps_state         = "Disabled"
     http2_enabled      = true
-    websockets_enabled = false
+    websockets_enabled = var.websockets_enabled
     use_32_bit_worker  = false
     ip_restriction     = var.ip_restriction
     scm_ip_restriction = var.ip_restriction
@@ -77,6 +78,18 @@ resource "azurerm_linux_web_app" "this" {
       }
     }
   }
+  dynamic "storage_account" {
+    for_each = var.storage_account
+    content {
+      access_key   = storage_account.value.access_key
+      account_name = storage_account.value.account_name
+      name         = storage_account.value.name
+      share_name   = storage_account.value.share_name
+      type         = storage_account.value.type
+      mount_path   = storage_account.value.mount_path
+    }
+  }
+
   lifecycle {
     ignore_changes = [
       tags["hidden-link: /app-insights-conn-string"],
