@@ -137,6 +137,7 @@ variable "storage_account" {
     mount_path   = string
   }))
   default = []
+  description = "BYOS storage mount configuration"
 }
 
 variable "websockets_enabled" {
