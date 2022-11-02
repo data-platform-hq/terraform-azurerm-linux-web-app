@@ -31,7 +31,7 @@ variable "service_plan_id" {
 
 variable "name" {
   type        = string
-  description = "Function index/name (like 007)"
+  description = "Web index/name (like 007)"
 }
 
 variable "application_type" {
@@ -41,7 +41,7 @@ variable "application_type" {
 }
 
 variable "ip_restriction" {
-  description = "Firewall settings for the function app"
+  description = "Firewall settings for the web app"
   type = list(object({
     name                      = string
     ip_address                = string
@@ -69,6 +69,25 @@ variable "ip_restriction" {
   ]
 }
 
+variable "scm_ip_restriction" {
+  description = "Firewall settings for the SCM web app"
+  type = list(object({
+    name                      = string
+    ip_address                = string
+    service_tag               = string
+    virtual_network_subnet_id = string
+    priority                  = string
+    action                    = string
+    headers = list(object({
+      x_azure_fdid      = list(string)
+      x_fd_health_probe = list(string)
+      x_forwarded_for   = list(string)
+      x_forwarded_host  = list(string)
+    }))
+  }))
+  default = null
+}
+
 variable "app_settings" {
   type        = map(string)
   default     = {}
@@ -77,7 +96,7 @@ variable "app_settings" {
 
 variable "subnet_id" {
   type        = string
-  description = "Subnet ID for the function app"
+  description = "Subnet ID for the web app"
   default     = null
 }
 

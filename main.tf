@@ -53,7 +53,7 @@ resource "azurerm_linux_web_app" "this" {
     websockets_enabled = var.websockets_enabled
     use_32_bit_worker  = false
     ip_restriction     = var.ip_restriction
-    scm_ip_restriction = var.ip_restriction
+    scm_ip_restriction = var.scm_ip_restriction == null ? var.ip_restriction : var.scm_ip_restriction
     application_stack {
       docker_image        = local.application_stack["docker_image"]
       docker_image_tag    = local.application_stack["docker_image_tag"]
