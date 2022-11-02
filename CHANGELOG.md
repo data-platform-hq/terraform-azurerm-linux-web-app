@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.2.1...v1.3.0) (2022-11-02)
+
+
+### Features
+
+* separate scm_ip_restriction ([1133447](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/113344794cbe3038c46baafca64158421dd58166))
+
 ## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.2.0...v1.2.1) (2022-10-27)
 
 
