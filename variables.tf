@@ -170,3 +170,9 @@ variable "enable_appinsights" {
   description = "Enable application insights"
   default     = true
 }
+
+variable "appinsights_log_workspace_id" {
+  type        = string
+  description = "Resource ID of Log Analytics Workspace"
+  default     = null
+}
