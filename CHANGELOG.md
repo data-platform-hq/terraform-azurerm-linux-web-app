@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.3.0...v1.4.0) (2022-12-19)
+
+
+### Features
+
+* added Log Analytics workspace parameter ([82e3ea1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/82e3ea1b6e8fa59bd6edb16c6a582f08a806a9af))
+
 # [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.2.1...v1.3.0) (2022-11-02)
 
 
