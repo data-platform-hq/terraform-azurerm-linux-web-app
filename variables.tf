@@ -111,7 +111,7 @@ variable "application_stack" {
   default = {
     java_server         = "JAVA"
     java_server_version = 11
-    java_version        = "java11"
+    java_version        = "11"
   }
   description = "Application stack configuration, run `az webapp list-runtimes --os-type linux` to get the list of supported stacks"
 }
