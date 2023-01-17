@@ -34,7 +34,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_settings"></a> [app\_settings](#input\_app\_settings) | Application setting | `map(string)` | `{}` | no |
-| <a name="input_application_stack"></a> [application\_stack](#input\_application\_stack) | Application stack configuration, run `az webapp list-runtimes --os-type linux` to get the list of supported stacks | `map(string)` | <pre>{<br>  "java_server": "JAVA",<br>  "java_server_version": 11,<br>  "java_version": "java11"<br>}</pre> | no |
+| <a name="input_application_stack"></a> [application\_stack](#input\_application\_stack) | Application stack configuration, run `az webapp list-runtimes --os-type linux` to get the list of supported stacks | `map(string)` | <pre>{<br>  "java_server": "JAVA",<br>  "java_server_version": 11,<br>  "java_version": "11"<br>}</pre> | no |
 | <a name="input_application_type"></a> [application\_type](#input\_application\_type) | Application type (java, python, etc) | `string` | `"java"` | no |
 | <a name="input_enable_appinsights"></a> [enable\_appinsights](#input\_enable\_appinsights) | Enable application insights | `bool` | `true` | no |
 | <a name="input_appinsights_log_workspace_id"></a> [appinsights\_log\_workspace\_id](#input\_appinsights\_log\_workspace\_id) | Resource ID of Log Analytics workspace | `string` | `null` | no |
