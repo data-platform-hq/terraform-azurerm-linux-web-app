@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.4.0...v1.5.0) (2023-01-17)
+
+
+### Features
+
+* updated default value for java_version due to resource update ([6a2d044](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/6a2d044ce46da8c91c7022de2204c0ddf46bb7dc))
+
 # [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.3.0...v1.4.0) (2022-12-19)
 
 
