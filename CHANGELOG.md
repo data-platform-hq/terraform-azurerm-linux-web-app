@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.5.0...v1.6.0) (2023-01-26)
+
+
+### Bug Fixes
+
+* added ignore_changes ([f88f4f7](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/f88f4f770e0c9375a1a6e7a71eeb0fec7fae6d7f))
+
+
+### Features
+
+* added opportunity to enable diagnostic setting ([4abc954](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/4abc954d4efcd42ec106ec0cd8b45036b83c9ef3))
+
 # [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.4.0...v1.5.0) (2023-01-17)
 
 
