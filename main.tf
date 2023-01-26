@@ -32,6 +32,9 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
       category = metric.value
     }
   }
+  lifecycle {
+    ignore_changes = [log_analytics_destination_type] # TODO remove when issue is fixed: https://github.com/Azure/azure-rest-api-specs/issues/9281
+  }
 }
 
 locals {

@@ -178,9 +178,9 @@ variable "analytics_workspace_id" {
 }
 
 variable "analytics_destination_type" {
-  type = string
+  type        = string
   description = "Possible values are AzureDiagnostics and Dedicated."
-  default = "Dedicated"
+  default     = "Dedicated"
 }
 
 variable "enable_diagnostic_setting" {
