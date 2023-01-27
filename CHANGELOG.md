@@ -1,3 +1,11 @@
+## [1.6.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.6.0...v1.6.1) (2023-01-27)
+
+
+### Bug Fixes
+
+* added condition to data source ([62f5ff7](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/62f5ff7e4ce83ec25c490899bbd1d12acb990f10))
+* updated provider version ([ec6c359](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/ec6c35912ad617d80f378d6f97e0e5a67f94e417))
+
 # [1.6.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.5.0...v1.6.0) (2023-01-26)
 
 
