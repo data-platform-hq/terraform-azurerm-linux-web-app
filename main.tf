@@ -47,7 +47,7 @@ locals {
     WEBSITE_USE_PLACEHOLDER                    = "0"
     AZURE_LOG_LEVEL                            = "info"
     APPINSIGHTS_INSTRUMENTATIONKEY             = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : null
-    ApplicationInsightsAgent_EXTENSION_VERSION = var.enable_appinsights && var.application_type == "java1" ? "~3" : null
+    ApplicationInsightsAgent_EXTENSION_VERSION = var.enable_appinsights && var.application_type == "java" ? "~3" : null
   }
   application_stack_struct = {
     docker_image        = null
