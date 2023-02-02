@@ -40,13 +40,14 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
 
 locals {
   app_settings = {
-    WEBSITES_ENABLE_APP_SERVICE_STORAGE = "true"
-    WEBSITE_ENABLE_SYNC_UPDATE_SITE     = "true"
-    JAVA_OPTS                           = "-Dlog4j2.formatMsgNoLookups=true"
-    LOG4J_FORMAT_MSG_NO_LOOKUPS         = "true"
-    WEBSITE_USE_PLACEHOLDER             = "0"
-    AZURE_LOG_LEVEL                     = "info"
-    APPINSIGHTS_INSTRUMENTATIONKEY      = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : ""
+    WEBSITES_ENABLE_APP_SERVICE_STORAGE        = "true"
+    WEBSITE_ENABLE_SYNC_UPDATE_SITE            = "true"
+    JAVA_OPTS                                  = "-Dlog4j2.formatMsgNoLookups=true"
+    LOG4J_FORMAT_MSG_NO_LOOKUPS                = "true"
+    WEBSITE_USE_PLACEHOLDER                    = "0"
+    AZURE_LOG_LEVEL                            = "info"
+    APPINSIGHTS_INSTRUMENTATIONKEY             = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : null
+    ApplicationInsightsAgent_EXTENSION_VERSION = var.enable_appinsights && var.application_type == "java1" ? "~3" : null
   }
   application_stack_struct = {
     docker_image        = null
