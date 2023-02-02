@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.6.1...v1.7.0) (2023-02-02)
+
+
+### Bug Fixes
+
+* fix var value ([1ed0a49](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/1ed0a49c5563f702095123bd2a18e858eb4d0f51))
+
+
+### Features
+
+* add auto-instrumentation for Java ([857a96c](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/857a96cb9a0f4d7b92488e002e9bfe938ec8626d))
+
 ## [1.6.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.6.0...v1.6.1) (2023-01-27)
 
 
