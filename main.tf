@@ -42,8 +42,8 @@ locals {
   app_settings = {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE        = "true"
     WEBSITE_ENABLE_SYNC_UPDATE_SITE            = "true"
-    JAVA_OPTS                                  = "-Dlog4j2.formatMsgNoLookups=true"
-    LOG4J_FORMAT_MSG_NO_LOOKUPS                = "true"
+    JAVA_OPTS                                  = var.application_type == "java" ? "-Dlog4j2.formatMsgNoLookups=true" : null
+    LOG4J_FORMAT_MSG_NO_LOOKUPS                = var.application_type == "java" ? "true" : null
     WEBSITE_USE_PLACEHOLDER                    = "0"
     AZURE_LOG_LEVEL                            = "info"
     APPINSIGHTS_INSTRUMENTATIONKEY             = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : null
@@ -65,14 +65,15 @@ locals {
 }
 
 resource "azurerm_linux_web_app" "this" {
-  name                = "web-${var.project}-${var.env}-${var.location}-${var.name}"
-  location            = var.location
-  resource_group_name = var.resource_group
-  service_plan_id     = var.service_plan_id
-  https_only          = true
-  enabled             = true
-  tags                = var.tags
-  app_settings        = merge(local.app_settings, var.app_settings)
+  name                    = "web-${var.project}-${var.env}-${var.location}-${var.name}"
+  location                = var.location
+  resource_group_name     = var.resource_group
+  service_plan_id         = var.service_plan_id
+  https_only              = true
+  enabled                 = true
+  tags                    = var.tags
+  app_settings            = merge(local.app_settings, var.app_settings)
+  client_affinity_enabled = var.client_affinity_enabled
 
   identity {
     type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
