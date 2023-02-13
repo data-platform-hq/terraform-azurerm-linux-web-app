@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.7.0...v1.7.1) (2023-02-13)
+
+
+### Bug Fixes
+
+* fix stateful applications support ([da6a3ca](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/da6a3ca3f7cc97b5da45e5660110581a6b2e5b02))
+
 # [1.7.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.6.1...v1.7.0) (2023-02-02)
 
 
