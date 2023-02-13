@@ -38,6 +38,10 @@ variable "application_type" {
   type        = string
   description = "Application type (java, python, etc)"
   default     = "java"
+  validation {
+    condition     = contains(["ios", "java", "MobileCenter", "Node.JS", "other", "phone", "store", "web"], var.application_type)
+    error_message = "Valid values are ios for iOS, java for Java web, MobileCenter for App Center, Node.JS for Node.js, other for General, phone for Windows Phone, store for Windows Store and web for ASP.NET. Please note these values are case sensitive; unmatched values are treated as ASP.NET by Azure. Changing this forces a new resource to be created."
+  }
 }
 
 variable "ip_restriction" {
@@ -186,5 +190,11 @@ variable "analytics_destination_type" {
 variable "enable_diagnostic_setting" {
   type        = bool
   description = "Enable diagnostic setting. var.analytics_workspace_id must be provided"
+  default     = false
+}
+
+variable "client_affinity_enabled" {
+  type        = bool
+  description = "Improve performance of your stateless app by turning Affinity Cookie off, stateful apps should keep this setting on for compatibility"
   default     = false
 }
