@@ -58,6 +58,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags | `map(string)` | n/a | yes |
 | <a name="input_use_private_net"></a> [use\_private\_net](#input\_use\_private\_net) | Use private network injection | `bool` | `false` | no |
 | <a name="input_websockets_enabled"></a> [websockets\_enabled](#input\_websockets\_enabled) | Enable websockets | `bool` | `false` | no |
+| <a name="input_worker_count"></a> [worker\_count](#input\_worker\_count) | Number of workers | `number` | `null` | no |
 
 ## Outputs
 

@@ -198,3 +198,9 @@ variable "client_affinity_enabled" {
   description = "Improve performance of your stateless app by turning Affinity Cookie off, stateful apps should keep this setting on for compatibility"
   default     = false
 }
+
+variable "worker_count" {
+  type        = number
+  description = "Number of workers"
+  default     = null
+}
