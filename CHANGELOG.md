@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.7.1...v1.8.0) (2023-03-13)
+
+
+### Features
+
+* add site-scaling ([61e93d8](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/61e93d8cbea18796f14b985b6ffcf6fe74dbe4de))
+
 ## [1.7.1](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.7.0...v1.7.1) (2023-02-13)
 
 
