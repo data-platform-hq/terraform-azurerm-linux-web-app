@@ -133,6 +133,16 @@ resource "azurerm_linux_web_app" "this" {
   }
 }
 
+resource "azurerm_key_vault_access_policy" "this" {
+  count               = var.key_vault.id == null ? 0 : 1
+  key_vault_id        = var.key_vault.id
+  tenant_id           = azurerm_linux_web_app.this.identity[0].tenant_id
+  object_id           = azurerm_linux_web_app.this.identity[0].principal_id
+  key_permissions     = var.key_vault.key_permissions
+  secret_permissions  = var.key_vault.secret_permissions
+  storage_permissions = var.key_vault.storage_permissions
+}
+
 resource "azurerm_app_service_virtual_network_swift_connection" "this" {
   count          = var.use_private_net ? 1 : 0
   app_service_id = azurerm_linux_web_app.this.id
