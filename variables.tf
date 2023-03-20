@@ -204,3 +204,14 @@ variable "worker_count" {
   description = "Number of workers"
   default     = null
 }
+
+variable "key_vault" {
+  description = "Configure Linux Function App to Key Vault"
+  type = object({
+    id                  = optional(string, null)
+    key_permissions     = optional(list(string), null)
+    secret_permissions  = optional(list(string), ["Get", "List"])
+    storage_permissions = optional(list(string), null)
+  })
+  default = {}
+}
