@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.9.0...v1.10.0) (2023-03-28)
+
+
+### Features
+
+* update firewall defaults ([cfc67aa](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/cfc67aad3fc74e507fa2495ed51240273bea1120))
+
 # [1.9.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.8.0...v1.9.0) (2023-03-20)
 
 
