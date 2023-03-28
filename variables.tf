@@ -45,51 +45,53 @@ variable "application_type" {
 }
 
 variable "ip_restriction" {
-  description = "Firewall settings for the web app"
+  description = "Firewall settings for the function app"
   type = list(object({
     name                      = string
-    ip_address                = string
-    service_tag               = string
-    virtual_network_subnet_id = string
-    priority                  = string
+    ip_address                = optional(string, null)
+    service_tag               = optional(string, null)
+    virtual_network_subnet_id = optional(string, null)
+    priority                  = optional(string, "100")
     action                    = string
-    headers = list(object({
-      x_azure_fdid      = list(string)
-      x_fd_health_probe = list(string)
-      x_forwarded_for   = list(string)
-      x_forwarded_host  = list(string)
-    }))
+    headers = optional(list(object({
+      x_azure_fdid      = optional(list(string), null)
+      x_fd_health_probe = optional(list(string), null)
+      x_forwarded_for   = optional(list(string), null)
+      x_forwarded_host  = optional(list(string), null)
+    })), [])
   }))
   default = [
     {
-      name                      = "allow_azure"
-      ip_address                = null
-      service_tag               = "AzureCloud"
-      virtual_network_subnet_id = null
-      priority                  = "100"
-      action                    = "Allow"
-      headers                   = null
+      name        = "allow_azure"
+      service_tag = "AzureCloud"
+      action      = "Allow"
     }
   ]
 }
 
 variable "scm_ip_restriction" {
-  description = "Firewall settings for the SCM web app"
+  description = "Firewall settings for the function app"
   type = list(object({
     name                      = string
-    ip_address                = string
-    service_tag               = string
-    virtual_network_subnet_id = string
-    priority                  = string
+    ip_address                = optional(string, null)
+    service_tag               = optional(string, null)
+    virtual_network_subnet_id = optional(string, null)
+    priority                  = optional(string, "100")
     action                    = string
-    headers = list(object({
-      x_azure_fdid      = list(string)
-      x_fd_health_probe = list(string)
-      x_forwarded_for   = list(string)
-      x_forwarded_host  = list(string)
-    }))
+    headers = optional(list(object({
+      x_azure_fdid      = optional(list(string), null)
+      x_fd_health_probe = optional(list(string), null)
+      x_forwarded_for   = optional(list(string), null)
+      x_forwarded_host  = optional(list(string), null)
+    })), [])
   }))
-  default = null
+  default = [
+    {
+      name        = "allow_azure"
+      service_tag = "AzureCloud"
+      action      = "Allow"
+    }
+  ]
 }
 
 variable "app_settings" {
