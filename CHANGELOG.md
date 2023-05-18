@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.11.0...v1.12.0) (2023-05-18)
+
+
+### Features
+
+* add hostname output ([e4e3adc](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/e4e3adc05301705c14ea5b9e3c5bd05ff5dcbce1))
+
 # [1.11.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.10.0...v1.11.0) (2023-05-18)
 
 
