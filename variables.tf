@@ -165,12 +165,6 @@ variable "storage_account" {
   description = "BYOS storage mount configuration"
 }
 
-variable "websockets_enabled" {
-  type        = bool
-  description = "Enable websockets"
-  default     = false
-}
-
 variable "enable_appinsights" {
   type        = bool
   description = "Enable application insights"
@@ -201,12 +195,6 @@ variable "client_affinity_enabled" {
   default     = false
 }
 
-variable "worker_count" {
-  type        = number
-  description = "Number of workers"
-  default     = null
-}
-
 variable "key_vault" {
   description = "Configure Linux Function App to Key Vault"
   type = object({
@@ -216,4 +204,19 @@ variable "key_vault" {
     storage_permissions = optional(list(string), null)
   })
   default = {}
+}
+
+variable "site_config" {
+  type = object({
+    always_on                                     = optional(bool, true)
+    ftps_state                                    = optional(string, "Disabled")
+    http2_enabled                                 = optional(bool, true)
+    websockets_enabled                            = optional(bool, false)
+    use_32_bit_worker                             = optional(bool, false)
+    container_registry_use_managed_identity       = optional(bool, false)
+    container_registry_managed_identity_client_id = optional(string, null)
+    worker_count                                  = optional(number, null)
+  })
+  default     = {}
+  description = "Site configuration"
 }

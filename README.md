@@ -9,7 +9,7 @@ Terraform module for creation Azure Linux Web App
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.40.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.49.0 |
 
 ## Providers
 
@@ -55,12 +55,11 @@ No modules.
 | <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Resource group name | `string` | n/a | yes |
 | <a name="input_scm_ip_restriction"></a> [scm\_ip\_restriction](#input\_scm\_ip\_restriction) | Firewall settings for the function app | <pre>list(object({<br>    name                      = string<br>    ip_address                = optional(string, null)<br>    service_tag               = optional(string, null)<br>    virtual_network_subnet_id = optional(string, null)<br>    priority                  = optional(string, "100")<br>    action                    = string<br>    headers = optional(list(object({<br>      x_azure_fdid      = optional(list(string), null)<br>      x_fd_health_probe = optional(list(string), null)<br>      x_forwarded_for   = optional(list(string), null)<br>      x_forwarded_host  = optional(list(string), null)<br>    })), [])<br>  }))</pre> | <pre>[<br>  {<br>    "action": "Allow",<br>    "name": "allow_azure",<br>    "service_tag": "AzureCloud"<br>  }<br>]</pre> | no |
 | <a name="input_service_plan_id"></a> [service\_plan\_id](#input\_service\_plan\_id) | App Service plan ID | `string` | n/a | yes |
+| <a name="input_site_config"></a> [site\_config](#input\_site\_config) | Site configuration | <pre>object({<br>    always_on                                     = optional(bool, true)<br>    ftps_state                                    = optional(string, "Disabled")<br>    http2_enabled                                 = optional(bool, true)<br>    websockets_enabled                            = optional(bool, false)<br>    use_32_bit_worker                             = optional(bool, false)<br>    container_registry_use_managed_identity       = optional(bool, false)<br>    container_registry_managed_identity_client_id = optional(string, null)<br>    worker_count                                  = optional(number, null)<br>  })</pre> | `{}` | no |
 | <a name="input_storage_account"></a> [storage\_account](#input\_storage\_account) | BYOS storage mount configuration | <pre>list(object({<br>    access_key   = string<br>    account_name = string<br>    name         = string<br>    share_name   = string<br>    type         = string<br>    mount_path   = string<br>  }))</pre> | `[]` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID for the web app | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags | `map(string)` | n/a | yes |
 | <a name="input_use_private_net"></a> [use\_private\_net](#input\_use\_private\_net) | Use private network injection | `bool` | `false` | no |
-| <a name="input_websockets_enabled"></a> [websockets\_enabled](#input\_websockets\_enabled) | Enable websockets | `bool` | `false` | no |
-| <a name="input_worker_count"></a> [worker\_count](#input\_worker\_count) | Number of workers | `number` | `null` | no |
 
 ## Outputs
 

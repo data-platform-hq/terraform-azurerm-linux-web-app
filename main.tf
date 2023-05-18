@@ -80,11 +80,14 @@ resource "azurerm_linux_web_app" "this" {
     identity_ids = var.identity_ids
   }
   site_config {
-    always_on          = true
-    ftps_state         = "Disabled"
-    http2_enabled      = true
-    websockets_enabled = var.websockets_enabled
-    use_32_bit_worker  = false
+    always_on                                     = var.site_config.always_on
+    container_registry_managed_identity_client_id = var.site_config.container_registry_managed_identity_client_id
+    container_registry_use_managed_identity       = var.site_config.container_registry_use_managed_identity
+    ftps_state                                    = var.site_config.ftps_state
+    http2_enabled                                 = var.site_config.http2_enabled
+    use_32_bit_worker                             = var.site_config.use_32_bit_worker
+    websockets_enabled                            = var.site_config.websockets_enabled
+    worker_count                                  = var.site_config.worker_count
     dynamic "ip_restriction" {
       for_each = var.ip_restriction
       content {
@@ -125,7 +128,6 @@ resource "azurerm_linux_web_app" "this" {
         }
       }
     }
-    worker_count = var.worker_count
     application_stack {
       docker_image        = local.application_stack["docker_image"]
       docker_image_tag    = local.application_stack["docker_image_tag"]
