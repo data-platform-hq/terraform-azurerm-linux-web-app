@@ -217,6 +217,6 @@ variable "site_config" {
     container_registry_managed_identity_client_id = optional(string, null)
     worker_count                                  = optional(number, null)
   })
-  default = {}
+  default     = {}
   description = "Site configuration"
 }
