@@ -65,8 +65,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_default_hostname"></a> [default\_hostname](#output\_default\_hostname) | Linux Web App default hostname |
 | <a name="output_id"></a> [id](#output\_id) | Linux Web App ID |
-| <a name="output_identity"></a> [identity](#output\_identity) | Function app Managed Identity |
+| <a name="output_identity"></a> [identity](#output\_identity) | Linux Web App Managed Identity |
 <!-- END_TF_DOCS -->
 
 ## License
