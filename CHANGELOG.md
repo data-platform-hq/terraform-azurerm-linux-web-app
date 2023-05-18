@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.10.0...v1.11.0) (2023-05-18)
+
+
+### Features
+
+* add container registry configuration ([7208bb5](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/commit/7208bb54fd1132ca670048be277d650a48204f9c))
+
 # [1.10.0](https://github.com/data-platform-hq/terraform-azurerm-linux-web-app/compare/v1.9.0...v1.10.0) (2023-03-28)
 
 
