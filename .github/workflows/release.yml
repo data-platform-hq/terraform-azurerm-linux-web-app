@@ -24,6 +24,12 @@ jobs:
         with:
           fetch-depth: 0
 
+        # Configure the bot user account's name and email for commit
+      - name: Configure Git
+        run: |
+          git config --global user.email "bot@example.com"
+          git config --global user.name "Bot Name"
+
       - name: Release
         uses: cycjimmy/semantic-release-action@v3
         env:
