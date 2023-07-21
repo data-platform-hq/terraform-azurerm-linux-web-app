@@ -17,7 +17,9 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    # Skip running release workflow on forks
+    permissions:
+      contents: read
+      pull-requests: write    # Skip running release workflow on forks
     if: github.repository_owner == 'data-platform-hq'
     steps:
       - name: Checkout
