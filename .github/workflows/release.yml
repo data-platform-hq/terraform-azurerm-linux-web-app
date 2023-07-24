@@ -26,12 +26,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-        # Configure the bot user account's name and email for commit
-      # - name: Configure Git
-      #   run: |
-      #     git config --global user.email "ruslanriznyk@gmail.com"
-      #     git config --global user.name "roolrd"
-
       - name: Release
         uses: cycjimmy/semantic-release-action@v3
         env:
