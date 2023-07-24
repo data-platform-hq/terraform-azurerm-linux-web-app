@@ -1,4 +1,4 @@
-##
+###
 name: Release
 
 on:
@@ -33,5 +33,5 @@ jobs:
 
       - name: Release
         uses: cycjimmy/semantic-release-action@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
